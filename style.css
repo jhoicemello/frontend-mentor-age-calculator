@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root {
+--purple: hsl(259, 100%, 65%);
+--lightRed: hsl(0, 100%, 67%);
+
+--white: hsl(0, 0%, 100%);
+--off-white: hsl(0, 0%, 94%);
+--light-grey: hsl(0, 0%, 86%);
+--smokey-grey: hsl(0, 1%, 44%);
+--off-black: hsl(0, 0%, 8%);
+}
+
+body {
+    background-color: var(--light-grey);
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+form {
+    background-color: var(--white);
+    border-radius: 10px 10px 100px 10px;
+    padding: 40px 20px;
+    width: fit-content;
+}
+
+.container-data {
+    display: flex;
+    
+    gap: 10px;
+    color: var(--smokey-grey);
+}
+
+input, input:valid {
+    display: block;
+    font-size: 20px;
+    width: 75px;
+    border-radius: 6px;
+    border-color: var(--light-grey);
+    color: var(--off-black);
+    padding: 10px;
+}
+
+input::placeholder{
+    color: var(--smokey-grey);
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+input:focus {
+    outline-color: var(--purple);
+    box-shadow: none;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+span {
+    color: var(--purple);
+    font-weight: 800 italic;
+    font-size: 32px;
+}
+
+.linha {
+    width: 100%;
+    border: 1px solid var(--light-grey);
+}
+
+p {
+    color: var(--off-black);
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.container-seta {
+    position: relative;
+    padding: 40px 0px;
+}
+
+.seta {
+    border-radius: 50%;
+    background-color: var(--purple);
+    padding: 20px;
+    position: absolute;
+    right: -2px;
+    top:0px;
+}
+
+@media (max-width: 375px) {
+    .seta {
+      right: calc(50% - 40px)
+    }
+  }
+
+.seta:hover {
+    background-color: var(--off-black);
+    cursor: pointer;
+}
+
+.errorDay, .errorMonth, .errorYear {
+    width: 50px;
+    margin: 1px;
+    font-size: 9px;
+    font-weight: 100;
+    color: var(--lightRed);
+    box-sizing: border-box;
+  }
+  
+  .error{
+    color: var(--lightRed);
+  }
+
+  .error *{
+    outline-color: var(--lightRed);
+    border-color: var(--lightRed);
+  }
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
