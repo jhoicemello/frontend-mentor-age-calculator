@@ -84,8 +84,16 @@ const dataAtual = new Date (anoAtual+ "-"+ mesAtual+"-"+diaAtual);
             errorYear.textContent = empty;
             hasErrorYear = true;
         }
-        else if (anoNasc < 0 || anoNasc >= anoAtual) {
+        else if (anoNasc < 0 || anoNasc > anoAtual) {
             errorYear.textContent = invalidYear;
+            hasErrorYear = true;
+        }
+        else if (anoNasc === anoAtual && mesNasc > mesAtual) {
+            errorYear.textContent = invalidDate;
+            hasErrorYear = true;
+        }
+        else if (anoNasc === anoAtual && mesNasc === mesAtual && diaNasc > diaAtual) {
+            errorYear.textContent = invalidDate;
             hasErrorYear = true;
         }
         else {
